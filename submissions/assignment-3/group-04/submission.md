@@ -24,8 +24,6 @@ Five sentences. Which option fits our client, and why? Use the client's users, t
 
 Option B, the Multi-AZ deployment, fits the sari-sari store point-of-sale chain because its cashiers and store managers need the system to keep recording sales during business hours. If the database goes down, stores lose sales, build long queues, and fall back to manual receipts that are hard to reconcile. The extra USD 21.74 a month over Option A is justified if even a short checkout outage costs the chain more than that, which can be plausible for a POS business that depends on continuous checkout. Multi-AZ can provide automatic failover, not read scaling, as it keeps writes available when the primary database or its Availability Zone fails, but it does not serve read traffic while the primary is healthy. The chain’s read load is modest and comes mainly from product lookups and end-of-day reports, so a read replica is not worth the cost yet.
 
-Option C costs almost the same as Option B but only scales reads, and it does not keep writes available when the primary database or its Availability Zone fails. Option A is the cheapest, but it leaves the whole chain on one database in one Availability Zone, which is too risky for stores that depend on continuous checkout. Option A could be defended only if the chain were extremely small and downtime were tolerable, which may not be the scenario described here.
-
 ## Question
 
 Why is a Multi-AZ standby not the same as a read replica?
