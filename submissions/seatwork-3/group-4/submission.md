@@ -1,10 +1,5 @@
 # Seatwork 3 Submission
 
-<!--
-Add site.png in this folder before submitting.
-Keep the browser address bar visible in site.png.
--->
-
 ## About us
 
 - Group number: 4
@@ -27,5 +22,5 @@ Keep the browser address bar visible in site.png.
 | --- | --- |
 | CharlesTogle | Created the S3 bucket. |
 | vivrelavie | Created the bucket policy. |
-| Joaqamole96 | Uploaded index.html and enabled static website hosting. |
+| JoaquinLuisGuevarra96 | Uploaded index.html and enabled static website hosting. |
 | AJPSJ | Verified that the website was up and working. |
