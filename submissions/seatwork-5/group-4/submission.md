@@ -1,22 +1,12 @@
 # Seatwork 5 Submission
 
-<!--
-How to use this template:
-
-1. Copy this file to submissions/seatwork-5/group-<number>/submission.md
-2. Replace every <answer> with your group's answer. Delete the angle brackets too.
-3. Save template.yaml and main.tf in the same folder.
-4. Do not put an access key, a password, an invoke URL, or the AWS account number in any file.
-5. Write GitHub usernames, not full names or student numbers.
--->
-
 ## About us
 
-- Group number: <answer>
-- Section: <answer>
-- Group IAM user: <answer>
-- Table name: <answer>
-- Bucket name: <answer>
+- Group number: 4
+- Section: IV-DCSAD
+- Group IAM user: dcsad-g04
+- Table name: umak-elec3-dcsad-g04-messages
+- Bucket name: umak-elec3-dcsad-g04-linktree
 
 ## Files
 
@@ -27,16 +17,17 @@ How to use this template:
 
 1. Suppose that our group user could create stacks, and we ran `aws cloudformation deploy` with our template today. What happens, and why?
 
-<answer>
+The deployment fails and CloudFormation rolls back the new stack. CloudFormation tries to create the table and bucket as new resources, but both names are already used by the resources that we made in the console; DynamoDB table names must be unique in the account and Region, and S3 bucket names are globally unique. The existing table, its messages, and the bucket are left unchanged. We would need to import those existing resources into a stack or give the new resources different names before deploying.
 
 2. Why is a change written in a template and reviewed in a Pull Request safer than the same change made in the console? Which Well-Architected pillar does it serve?
 
-<answer>
+A template records the exact settings in Git, and a Pull Request lets a groupmate review the change before it reaches AWS. A reviewer can catch a wrong name, permission, or tag before it takes effect, and the recorded history shows what changed and lets us restore the earlier version. This serves the Operational Excellence pillar because it makes changes reviewed, traceable, and repeatable.
 
 ## Contribution
 
 | GitHub username | What this groupmate did |
 | --- | --- |
-| <answer> | <answer> |
-| <answer> | <answer> |
-| <answer> | <answer> |
+| JoaquinLuisGuevarra96 | Wrote and checked `template.yaml`. |
+| AJPSJ | Wrote and checked `main.tf`. |
+| CharlesTogle | Answered Question 1 about deploying the template over the existing resources. |
+| vivrelavie | Answered Question 2 about safer changes and the Well-Architected pillar. |
